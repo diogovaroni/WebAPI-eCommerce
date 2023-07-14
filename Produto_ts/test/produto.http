@@ -3,3 +3,9 @@ GET http://localhost:3000/
 
 ### Cadastrar produtos
 POST http://localhost:3000/
+Content-Type: application/json
+
+{
+    "nome": "Bolacha",
+    "preco": 4.5
+}
