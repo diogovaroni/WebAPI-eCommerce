@@ -1,8 +1,8 @@
-const express = require('express');
+import express from "express";
 
 const app = express();
 
-const produtos = [];
+const produtos : any = [];
 
 app.use(express.json());
 
