@@ -1,8 +1,9 @@
 import express from "express";
+import { Produto } from "./models/produto.model";
 
 const app = express();
 
-const produtos : any = [];
+const produtos : Produto[] = [];
 
 app.use(express.json());
 
