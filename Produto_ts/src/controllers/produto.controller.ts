@@ -9,7 +9,14 @@ export class ProdutoController{
             data : produtos
         })
     }
-    find(){}
+    find(request: Request, response: Response){
+        const { nome } = request.params;
+        const produto : Produto = produtos.find(p => p.nome == nome)!;
+        return response.status(200).json({
+            message: "Resultado da busca: ",
+            data: produto
+        })
+    }
     create(request: Request, response: Response){
         const produto : Produto = request.body;
         produtos.push(produto);
