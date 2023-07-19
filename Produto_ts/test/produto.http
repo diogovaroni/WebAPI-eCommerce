@@ -1,11 +1,11 @@
 ### Listar produtos
-GET http://localhost:3000/
+GET http://localhost:3000/produto
 
 ###Buscar produto por nome
-GET http://localhost:3000/Bolacha
+GET http://localhost:3000/produto/1
 
 ### Cadastrar produtos
-POST http://localhost:3000/
+POST http://localhost:3000/produto
 Content-Type: application/json
 
 {
