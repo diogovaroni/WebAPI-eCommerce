@@ -38,5 +38,12 @@ export class ProdutoController{
             data: produtos
         });
     }
-    update(){}
+    update(request: Request, response: Response){
+        let produto: Produto = request.body;
+        produto = repository.update(produto);
+        return response.status(200).json({
+            message: "Produto alterado: ",
+            data: produto
+        });
+    }
 }

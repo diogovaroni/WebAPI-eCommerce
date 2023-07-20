@@ -25,5 +25,9 @@ export class ProdutoRepository{
             }
         return produtos;
     }
-
+    update(produto : Produto) : Produto{
+        const index = produtos.findIndex((p) => p.id === produto.id)!;
+        produtos[index] = produto;
+        return produto;
+    }
 }
