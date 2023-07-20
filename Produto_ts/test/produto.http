@@ -1,10 +1,10 @@
-### Listar produtos
+###Listar produtos
 GET http://localhost:3000/produto
 
 ###Buscar produto por nome
 GET http://localhost:3000/produto/1
 
-### Cadastrar produtos
+###Cadastrar produtos
 POST http://localhost:3000/produto
 Content-Type: application/json
 
@@ -12,3 +12,6 @@ Content-Type: application/json
     "nome": "Bolacha",
     "preco": 4.5
 }
+
+###Deletar produtos
+DELETE http://localhost:3000/produto/1

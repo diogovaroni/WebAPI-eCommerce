@@ -11,7 +11,6 @@ export class ProdutoController{
             data : produtos
         })
     }
-
     find(request: Request, response: Response){
         const id = Number.parseInt(request.params.id);
         const produto : Produto = repository.find(id);
@@ -23,7 +22,6 @@ export class ProdutoController{
             data: produto
         });
     }
-
     create(request: Request, response: Response){
         let produto : Produto = request.body;
         produto = repository.create(produto);
@@ -32,6 +30,13 @@ export class ProdutoController{
             data : produto
         });
     }
-    delete(){}
+    delete(request: Request, response: Response){
+        const id = Number.parseInt(request.params.id);
+        let produtos = repository.delete(id);
+        return response.status(200).json({
+            message: "Produto excluído com sucesso!",
+            data: produtos
+        });
+    }
     update(){}
 }

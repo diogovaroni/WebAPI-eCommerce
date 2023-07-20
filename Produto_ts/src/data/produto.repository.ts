@@ -6,7 +6,6 @@ export class ProdutoRepository{
     list(): Produto[]{
         return produtos;
     }
-
     create(produto: Produto): Produto{
         if (produtos.length == 0){
             produto.id = 1;
@@ -16,8 +15,15 @@ export class ProdutoRepository{
         produtos.push(produto);
         return produto;
     }
-
     find(id: number) : Produto{
         return produtos.find((p) => p.id === id)!;
     }
+    delete(id: number) : Produto[]{
+        const index = produtos.findIndex((p) => p.id === id)!;
+            if(index != -1){
+                produtos.splice(index, 1);
+            }
+        return produtos;
+    }
+
 }
