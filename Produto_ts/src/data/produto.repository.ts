@@ -15,11 +15,11 @@ export class ProdutoRepository{
         produtos.push(produto);
         return produto;
     }
-    find(id: number) : Produto{
-        return produtos.find((p) => p.id === id)!;
+    find(idProduto: number) : Produto{
+        return produtos.find((p) => p.id === idProduto)!;
     }
-    delete(id: number) : Produto[]{
-        const index = produtos.findIndex((p) => p.id === id)!;
+    delete(idProduto: number) : Produto[]{
+        const index = produtos.findIndex((p) => p.id === idProduto)!;
             if(index != -1){
                 produtos.splice(index, 1);
             }

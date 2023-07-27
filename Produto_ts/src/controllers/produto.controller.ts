@@ -7,7 +7,7 @@ export class ProdutoController{
     list(request: Request, response: Response){
         const produtos = repository.list();
         return response.status(200).json({
-            message: "Deu certo!",
+            message: "Lista de Produtos: ",
             data : produtos
         })
     }
