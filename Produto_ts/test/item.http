@@ -1,0 +1,8 @@
+### Listar itens
+GET http://localhost:3000/item/
+
+### Buscar itens por carrinho
+GET http://localhost:3000/item/id
+
+### Adicionar item ao carrinho
+POST http://localhost:3000/item/1/5/
