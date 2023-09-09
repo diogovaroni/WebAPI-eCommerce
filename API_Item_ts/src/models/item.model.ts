@@ -1,5 +1,7 @@
+import { Produto } from "./produto.model";
 
-// TODO: implementar model de Item
 export interface Item{
-      
+      idCarrinho?: string;
+      produto?: Produto;
+      quantidade?: number;
 }
