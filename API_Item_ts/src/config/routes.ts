@@ -1,2 +1,9 @@
+import { Router } from "express";
+import { ItemController } from "../controllers/item.controller";
 
-//TODO: Implementar rotas da aplicação de Item
+const router: Router = Router();
+
+//Carrinho
+router.post("/item/:idProduto/:quantidade/:id?", new ItemController().create);
+
+export { router };
