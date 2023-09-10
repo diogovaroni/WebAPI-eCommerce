@@ -11,7 +11,9 @@ export class ItemRepository {
     list() : Item[] {
         return itens;
     }
-    find() {}
+    find(id: string) : Item[] {
+        return itens.filter((p) => p.idCarrinho === id)!;
+    }
     update() {}
     delete() {}
 }

@@ -37,7 +37,14 @@ export class ItemController {
             data: itens
         });
     }
-    find() {}
+    find(request: Request, response: Response) {
+        const { id } = request.params;
+        const itens = repositoryItem.find(id);
+        return response.status(200).json({
+            message: "Carrinho: ",
+            data: itens
+        });
+    }
     update() {}
     delete() {}
 }
