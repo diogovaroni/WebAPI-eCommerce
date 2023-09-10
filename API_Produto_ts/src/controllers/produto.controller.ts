@@ -11,9 +11,9 @@ export class ProdutoController{
             data : produtos
         });
     }
-    find(request: Request, response: Response){
+    async find(request: Request, response: Response){
         const id = Number.parseInt(request.params.id);
-        const produto : Produto = repository.find(id);
+        const produto = await repository.find(id);
         if(!produto){
             return response.status(404).json({ message: "Produto não encontrado"});
         }

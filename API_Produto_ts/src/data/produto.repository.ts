@@ -16,9 +16,12 @@ export class ProdutoRepository{
         });
         return produto;        
     }
-
-    find(idProduto: number) : Produto{
-        return produtos.find((p) => p.id === idProduto)!;
+    async find(idProduto: number) : Promise<Produto | null> {
+        return await prisma.produto.findUnique(
+            {
+                where : { id : idProduto }
+            }
+        );
     }
     delete(idProduto: number) : Produto[]{
         const index = produtos.findIndex((p) => p.id === idProduto)!;
