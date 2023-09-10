@@ -8,7 +8,9 @@ export class ItemRepository {
         return item;
     }
 
-    list() {}
+    list() : Item[] {
+        return itens;
+    }
     find() {}
     update() {}
     delete() {}

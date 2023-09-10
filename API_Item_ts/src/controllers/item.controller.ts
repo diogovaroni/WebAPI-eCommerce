@@ -30,7 +30,13 @@ export class ItemController {
         });
     }
     
-    list() {}
+    list(request: Request, response: Response) {
+        const itens = repositoryItem.list();
+        return response.status(200).json({
+            message: "Lista de Carrinhos: ",
+            data: itens
+        });
+    }
     find() {}
     update() {}
     delete() {}
