@@ -1,20 +1,22 @@
+import { PrismaClient } from "@prisma/client";
 import { Produto } from "../models/produto.model";
 
 let produtos : Produto[] = [];
-
+const prisma = new PrismaClient();
 export class ProdutoRepository{
     list(): Produto[]{
         return produtos;
     }
-    create(produto: Produto): Produto{
-        if (produtos.length == 0){
-            produto.id = 1;
-        } else{
-            produto.id = produtos[produtos.length -1].id + 1;
-        }
-        produtos.push(produto);
-        return produto;
+    async create(produto: Produto): Promise<Produto> {
+        await prisma.produto.create({
+            data: {
+                nome : produto.nome,
+                preco : produto.preco
+            },
+        });
+        return produto;        
     }
+
     find(idProduto: number) : Produto{
         return produtos.find((p) => p.id === idProduto)!;
     }

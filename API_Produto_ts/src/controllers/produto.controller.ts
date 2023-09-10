@@ -22,9 +22,9 @@ export class ProdutoController{
             data: produto
         });
     }
-    create(request: Request, response: Response){
+    async create(request: Request, response: Response){
         let produto : Produto = request.body;
-        produto = repository.create(produto);
+        produto = await repository.create(produto);
         return response.status(201).json({
             message : "Produto cadastrado.",
             data : produto
