@@ -11,6 +11,6 @@ As aplicações fazem integração entre si via Axios, onde a aplicação de Ite
 ## Tecnologias Utilizadas
 
 <div>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="HTML" width="40" height="40"/>          
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="HTML" width="40" height="40"/>          
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" alt="HTML" width="40" height="40"/>    
-</div>
+</div>          
