@@ -1,5 +1,6 @@
-
 ###Adicionar item ao carrinho
 POST http://localhost:3001/item/2/15
 
+###Listar carrinhos
+GET http://localhost:3001/item
 

@@ -5,5 +5,5 @@ const router: Router = Router();
 
 //Carrinho
 router.post("/item/:idProduto/:quantidade/:id?", new ItemController().create);
-
+router.get("/item/", new ItemController().list);
 export { router };
