@@ -4,12 +4,12 @@ import { ProdutoRepository } from "../data/produto.repository";
 
 const repository = new ProdutoRepository();
 export class ProdutoController{
-    list(request: Request, response: Response){
-        const produtos = repository.list();
+    async list(request: Request, response: Response){
+        const produtos = await repository.list();
         return response.status(200).json({
             message: "Lista de Produtos: ",
             data : produtos
-        })
+        });
     }
     find(request: Request, response: Response){
         const id = Number.parseInt(request.params.id);

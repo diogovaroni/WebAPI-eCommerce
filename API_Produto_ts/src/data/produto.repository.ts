@@ -4,8 +4,8 @@ import { Produto } from "../models/produto.model";
 let produtos : Produto[] = [];
 const prisma = new PrismaClient();
 export class ProdutoRepository{
-    list(): Produto[]{
-        return produtos;
+    async list(): Promise<Produto[]> {
+        return await prisma.produto.findMany();
     }
     async create(produto: Produto): Promise<Produto> {
         await prisma.produto.create({
