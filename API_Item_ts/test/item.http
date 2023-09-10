@@ -4,3 +4,5 @@ POST http://localhost:3001/item/2/15
 ###Listar carrinhos
 GET http://localhost:3001/item
 
+###Buscar carrinho
+GET http://localhost:3001/item/4b75091e-bc0f-454c-b6de-b7cafa296a7
