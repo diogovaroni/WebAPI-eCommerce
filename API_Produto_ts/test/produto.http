@@ -9,19 +9,19 @@ POST http://localhost:3000/produto
 Content-Type: application/json
 
 {
-    "nome": "Bolacha",
-    "preco": 4.5
+    "nome": "Produto Teste3",
+    "preco": 3.3
 }
 
 ### Deletar produtos
-DELETE http://localhost:3000/produto/1
+DELETE http://localhost:3000/produto/2
 
 ### Atualizar produtos
 PUT http://localhost:3000/produto
 Content-Type: application/json
 
 {
-    "id": 2,
-    "nome": "Bolacha alterada",
-    "preco": 4.5
+    "id": 3,
+    "nome": "Produto Teste3",
+    "preco": 3.3
 }
