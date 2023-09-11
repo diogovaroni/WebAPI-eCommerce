@@ -32,9 +32,17 @@ export class ProdutoRepository{
             return null;
         }
     }
-    update(produto : Produto) : Produto{
-        const index = produtos.findIndex((p) => p.id === produto.id)!;
-        produtos[index] = produto;
-        return produto;
+    async update(produto: Produto | null) : Promise<Produto | null>{
+        try {
+            return await prisma.produto.update({
+                where : { id : produto?.id },
+                data : {
+                    nome : produto?.nome,
+                    preco : produto?.preco
+                }
+            });
+        } catch {
+            return null;
+        }
     }
 }

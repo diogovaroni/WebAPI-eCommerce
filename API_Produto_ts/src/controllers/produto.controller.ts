@@ -43,9 +43,14 @@ export class ProdutoController{
             data: produto
         });
     }
-    update(request: Request, response: Response){
-        let produto: Produto = request.body;
-        produto = repository.update(produto);
+    async update(request: Request, response: Response){
+        let produto: Produto | null = request.body;
+        produto = await repository.update(produto);
+        if (!produto) {
+            return response.status(404).json({
+                mesage: "Produto não encontrado!"
+            })
+        }
         return response.status(200).json({
             message: "Produto alterado: ",
             data: produto
