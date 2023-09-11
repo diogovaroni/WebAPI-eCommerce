@@ -23,12 +23,14 @@ export class ProdutoRepository{
             }
         );
     }
-    delete(idProduto: number) : Produto[]{
-        const index = produtos.findIndex((p) => p.id === idProduto)!;
-            if(index != -1){
-                produtos.splice(index, 1);
-            }
-        return produtos;
+    async delete(idProduto: number) : Promise<Produto | null>{
+        try {
+            return await prisma.produto.delete({
+                where : { id : idProduto }
+            });
+        } catch {
+            return null;
+        }
     }
     update(produto : Produto) : Produto{
         const index = produtos.findIndex((p) => p.id === produto.id)!;

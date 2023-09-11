@@ -30,12 +30,17 @@ export class ProdutoController{
             data : produto
         });
     }
-    delete(request: Request, response: Response){
+    async delete(request: Request, response: Response){
         const id = Number.parseInt(request.params.id);
-        let produtos = repository.delete(id);
+        let produto = await repository.delete(id);
+        if (!produto) {
+            return response.status(404).json({
+                message : "Produto não cadastrado!"
+            });
+        }
         return response.status(200).json({
             message: "Produto excluído com sucesso!",
-            data: produtos
+            data: produto
         });
     }
     update(request: Request, response: Response){
